@@ -7,22 +7,20 @@ import { ColorCardComponent } from './color-card/color-card.component';
 import { LanguageSwitcherComponent } from './language-switcher/language-switcher.component';
 import {ClipboardModule} from 'ngx-clipboard';
 import { DropFieldComponent } from './drop-field/drop-field.component';
-import { TooltipModule } from 'ng2-tooltip-directive';
-
 
 @NgModule({
   declarations: [
     AppComponent,
     ColorCardComponent,
     LanguageSwitcherComponent,
-    DropFieldComponent
+    DropFieldComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     ClipboardModule,
-    TooltipModule
   ],
+  entryComponents: [],
   providers: [],
   bootstrap: [AppComponent]
 })

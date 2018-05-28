@@ -25,7 +25,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": ["./src/assets/js/color-thief.min.js"]
+            "scripts": ["./src/assets/js/color-thief.min.js", "./src/assets/js/tippy.all.min.js"]
           },
           "configurations": {
             "production": {

@@ -1,10 +1,11 @@
-import { Component, Input, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { Component, Input, ViewChild, ElementRef, OnInit, ViewChildren } from '@angular/core';
 import { Color, ColorInfo, colorSetName, ColorSet } from './colors';
 import { colorMap } from './colors.data';
 import { imgSub, resetImgSub } from './imageEvent';
 import { trigger, transition, style, animate, group } from '@angular/animations';
 
 declare function ColorThief(): void;
+declare function tippy(selector: NodeListOf<any>, option: Object): any;
 
 @Component({
   selector: 'app-root',
@@ -31,6 +32,7 @@ declare function ColorThief(): void;
   ],
 })
 export class AppComponent implements OnInit {
+
   colors: Color[];
   standardColors: ColorInfo[];
   colorSet: ColorSet;
@@ -54,8 +56,12 @@ export class AppComponent implements OnInit {
       this.colors = cs.map((c) => {
         return Color.fromRGB(c);
       });
+      setTimeout(() => {
+        tippy(document.querySelectorAll('.dominateColorCard'), {
+          arrow: true,
+        });
+      }, 1000);
     }
-
 
     const colorSet = new Set<ColorInfo>();
     colors.forEach((color) => {
@@ -125,6 +131,9 @@ export class AppComponent implements OnInit {
     this.standarColorBannerShow = false;
     imgSub.subscribe((img) => {
       this.getColor(img);
-    })
+    });
+    tippy(document.querySelectorAll('.toolButton'), {
+      arrow: true,
+    });
   }
 }
