@@ -3,17 +3,16 @@
   <h1>ColorTale</h1>
   <div id="toolbar">
     <app-language-switcher></app-language-switcher>
-    <a class="toolButton" id="shuffle" (click)="feelingLucky()"><img src="./assets/img/shuffle.svg"></a>
-    <a class="toolButton" (click)="showAll()"><img src="./assets/img/all.svg"></a>
+    <a class="toolButton" tooltip="Lucky!" placement="top" hide-delay=0 id="shuffle" (click)="feelingLucky()"><img src="./assets/img/shuffle.svg"></a>
+    <a class="toolButton" tooltip="List All Colors" placement="top" hide-delay=0 title="list all colors" (click)="showAll()"><img src="./assets/img/all.svg"></a>
   </div>
-
   <app-drop-field></app-drop-field>
 
-  <h2 *ngIf="colors.length > 0">Most Dominate Colors</h2>
+  <h2 *ngIf="colors.length > 0" [@titleAnim]>Most Dominated Colors</h2>
   <div id="dominateColorContainer">
-    <div ngxClipboard [cbContent]="color.hex" *ngFor="let color of colors" class="dominateColorCard" [class.brighttext]="color.brightness < 0.5" [ngStyle]="{'background': color.hex }"><span class="dominateColorHex">{{color.hex}}</span></div>
+    <div ngxClipboard [@itemAnim] [cbContent]="color.hex" *ngFor="let color of colors" class="dominateColorCard" [class.brighttext]="color.brightness < 0.5" [ngStyle]="{'background': color.hex }"><span class="dominateColorHex">{{color.hex}}</span></div>
   </div>
-  <h2 *ngIf="standarColorBannerShow">Most Related Similar Standard Colors</h2>
+  <h2 *ngIf="standarColorBannerShow" [@titleAnim]>Most Related Similar Standard Colors</h2>
   <div id="colorPalette">
     <app-color-card [colorInfo]="colorInfo" *ngFor="let colorInfo of standardColors"></app-color-card>
   </div>

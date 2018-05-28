@@ -24,6 +24,7 @@
     font-size: 0.9em;
     font-family: "Courier New", Courier, monospace;
     cursor: pointer;
+    transition: background-color 1s ease;
 }
 
 .dominateColorCard.brighttext {

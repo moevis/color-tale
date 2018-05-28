@@ -2,6 +2,7 @@ import { Component, Input, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { Color, ColorInfo, colorSetName, ColorSet } from './colors';
 import { colorMap } from './colors.data';
 import { imgSub, resetImgSub } from './imageEvent';
+import { trigger, transition, style, animate, group } from '@angular/animations';
 
 declare function ColorThief(): void;
 
@@ -9,6 +10,25 @@ declare function ColorThief(): void;
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
+  animations: [
+    trigger('itemAnim', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate(900)
+      ]),
+      transition(':leave', [
+        animate('0.5s 0.2s ease', style({
+          opacity: 0
+        }))
+      ])
+    ]),
+    trigger('titleAnim', [
+      transition(':enter', [
+        style({ transform: 'translateY(-100%)'}),
+        animate(300),
+      ])
+    ])
+  ],
 })
 export class AppComponent implements OnInit {
   colors: Color[];
@@ -21,12 +41,24 @@ export class AppComponent implements OnInit {
     this.standarColorBannerShow = true;
     const colorThief = new ColorThief();
     const cs = colorThief.getPalette(img, this.colorNum);
-    this.colors = cs.map((c) => {
+    const colors = cs.map((c) => {
       return Color.fromRGB(c);
     });
 
+
+    if (this.colors.length === colors.length) {
+      this.colors.forEach((c, i) => {
+        c.copyFrom(colors[i]);
+      });
+    } else {
+      this.colors = cs.map((c) => {
+        return Color.fromRGB(c);
+      });
+    }
+
+
     const colorSet = new Set<ColorInfo>();
-    this.colors.forEach((color) => {
+    colors.forEach((color) => {
       let mostSimilarColorIndex = 0;
       let similarity = 0.0;
 

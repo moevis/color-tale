@@ -34,7 +34,7 @@ export class DropFieldComponent implements OnInit {
     const reader = new FileReader();
   
     reader.onload = e => {
-      this.previewImage.nativeElement.src = e.target.result;
+      this.previewImage.nativeElement.src = (e.target as any).result;
       setTimeout(() => {
         imgSub.next(this.previewImage.nativeElement);
       }, 100);
@@ -49,7 +49,7 @@ export class DropFieldComponent implements OnInit {
     if (ev.dataTransfer.items) {
       for (let i = 0; i < ev.dataTransfer.items.length; i++) {
         if (ev.dataTransfer.items[i].kind === 'file') {
-            let file = ev.dataTransfer.items[i].getAsFile();
+            const file = ev.dataTransfer.items[i].getAsFile();
             if (file.type.match('image/*')) {
                 this.loadImage(file);
                 break;

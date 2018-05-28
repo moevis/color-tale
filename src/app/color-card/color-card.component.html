@@ -1,4 +1,4 @@
-<div class="colorCard" [class.brighttext]="colorInfo.color.brightness < 0.5" [ngStyle]="{ 'box-shadow': colorInfo.color.hex + '9d 0px 16px 60px -15px' }">
+<div class="colorCard" [@cardAnim] [class.brighttext]="colorInfo.color.brightness < 0.5" [ngStyle]="{ 'box-shadow': colorInfo.color.hex + '9d 0px 16px 60px -15px' }">
   <div class="colorHeader" [ngStyle]="{'background-color': colorInfo.color.hex }">
     <div class="colorName">[ {{colorInfo.name}} ]</div>
     <div class="colorSubName">{{colorInfo.subname}}</div>

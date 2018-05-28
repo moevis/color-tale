@@ -46,6 +46,12 @@ export class Color {
         c.b = Math.floor(this.b * ratio);
         return c;
     }
+
+    copyFrom(color: Color) {
+        this.r = color.r;
+        this.g = color.g;
+        this.b = color.b;
+    }
 }
 
 export class ColorInfo {
