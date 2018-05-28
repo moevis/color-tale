@@ -1,0 +1,1 @@
+ng build --prod --base-href "https://moevis.github.io/color-tale/" --deploy-url ./
