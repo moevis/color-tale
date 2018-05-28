@@ -1,0 +1,41 @@
+.switcher {
+    display: inline-flex;
+    position: relative;
+    padding: 3px;
+    border-radius: 50px;
+    background: #c7c7c7;
+    box-shadow: #00000099 1px 1px 0px 0px;
+}
+
+.switcher > .switchHighlight {
+    width: 50%;
+    position: absolute;
+    top: 3px;
+    left: 0;
+    bottom: 3px;
+    background: black;
+    border-radius: 50px;
+    transition: .3s;
+}
+
+.switcher > button {
+    position: relative;
+    padding: 0.5em 1em;
+    font-weight: bold;
+    font-size: rem(16px);
+    color: rgba(255, 255, 255, .6);
+    background: none;
+    border-radius: 50px;
+    border: 0;
+    outline: none;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.switcher > button:hover {
+    color: white;
+}
+
+.switcher > button.active {
+    color: white;
+}

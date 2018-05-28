@@ -1,0 +1,4 @@
+<div #switcher class="switcher">
+    <div #switchHighlight class="switchHighlight"></div>
+    <button *ngFor="let lang of languages; let i = index" (click)='switchTo(lang.value, i)'>{{lang.label}}</button>
+  </div>

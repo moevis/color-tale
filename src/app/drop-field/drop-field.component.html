@@ -1,0 +1,4 @@
+<input id="file" (change)="changeFile($event)" #inputFile type="file" class="inputFile">
+<label for="file" (drop)="drop($event)" (dragover)="dragover($event)">
+  <img id="img" #previewImage (drop)="drop($event)" (dragover)="dragover($event)"/>
+</label>

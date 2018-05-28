@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body, #container {
+    /* height: 100%; */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+html {
+    background: rgb(249, 249, 249);
+}
+
+h1 {
+    font-family: "Lucida Console", Monaco, monospace;
+}
+
+h2 {
+    font-family: "Lucida Console", Monaco, monospace;
+}
+
+#qrcode {
+    display: none;
+    position: absolute;
+}
+
+#wechat {
+    position: relative;
+}
+
+#wechat:hover > #qrcode {
+    display: block;
+    width: 100px;
+    height: 100px;
+    bottom: 50px;
+    left: -30px;
+}
+
+.socialNetwork {
+    width: 30px;
+    margin: 10px;
+}
+
+footer {
+    text-align: center;
+}

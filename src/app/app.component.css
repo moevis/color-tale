@@ -1,0 +1,106 @@
+#container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+#colorPalette {
+    max-width: 700px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+}
+
+.dominateColorCard {
+    flex-grow: 1;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0 3px;
+    font-size: 0.9em;
+    font-family: "Courier New", Courier, monospace;
+    cursor: pointer;
+}
+
+.dominateColorCard.brighttext {
+    color: white;
+}
+
+
+#dominateColorContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 10px;
+    padding: 10px;
+    /* height: 40px; */
+}
+
+.dominateColorHex {
+    /* visibility: hidden; */
+    transition: color 0.5s ease;
+    color: transparent;
+}
+
+.dominateColorCard:hover > .dominateColorHex {
+    visibility: visible;
+    color: black;
+}
+
+.dominateColorCard.brighttext:hover > .dominateColorHex {
+    color: white;
+}
+
+#toolbar {
+    display: flex;
+}
+
+.toolButton {
+    border: none;
+    background: rgb(182, 182, 182);
+    border-radius: 50px;
+    padding: 10px 10px 5px;
+    margin-left: 10px;
+    box-shadow: #00000099 1px 1px 0px 0px;
+    cursor: pointer;
+    transition: background-color 1s ease;
+}
+
+.toolButton > img {
+    width: 1em;
+    height: 1em;
+}
+
+.toolButton:hover {
+    background: rgb(216, 216, 216);
+}
+/* 
+#getColor {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+#getColor > img {
+    margin: 5px;
+
+} */
+/* 
+#getColorContainer {
+    border-radius: 100px;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    background: linear-gradient(to right, #52A0FD 0%, #00e2fa 80%, #00e2fa 100%);
+} */
+app-drop-field {
+    max-width: 600px;
+    width: 100%;
+    margin-top: 20px;
+    transition: height 1s ease;
+}

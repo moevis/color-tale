@@ -1,0 +1,43 @@
+.inputFile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+    z-index: -1;
+}
+
+.inputFile + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    display: inline-block;
+    cursor: pointer;
+
+    width: 100%;
+    border: 5px dashed #c7c7c7;
+    min-height: 100px;
+    border-radius: 15px;
+
+    background: url(/assets/img/upload.svg);
+    background-size: 60px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+
+}
+
+.inputFile:focus + label,
+.inputFile + label:hover {
+    background-color: #00000010;
+}
+
+.inputFile:focus + label {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+
+#img {
+    width: 100%;
+    border-radius: 15px;
+}

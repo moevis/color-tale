@@ -1,0 +1,83 @@
+
+.colorCard {
+    width: 180px;
+    border-radius: 10px;
+    /* box-shadow: #6f6f6f73 0px 0 6px 0px, #6633997d 0px 16px 60px -15px; */
+    /* box-shadow:#6633997d 0px 16px 60px -15px; */
+    /* transition: box-shadow 1s ease; */
+    transition: background-color 1s ease;
+
+    margin: 8px;
+}
+
+.colorHeader {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    padding-top: 80px;
+    padding-bottom: 80px;
+    text-align: center;
+    transition: background-color 1s ease,
+                color 0.5s ease;
+    /* background: rebeccapurple; */
+}
+
+.colorBody {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: white;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    font-family: "Courier New", Courier, monospace;
+
+}
+
+.brighttext > .colorHeader {
+    color: white;
+}
+
+#copy::after {
+    content: '';
+	width: 0;
+	height: 0;
+    border-bottom: 10px solid transparent;
+    position: absolute;
+    /* right: 0; */
+    top: 5px;
+    right: -10px;
+    border-left: 10px solid transparent;
+    cursor: pointer;
+    transition: border-bottom-color 1s ease;
+}
+
+.colorCard:hover #copy::after {
+    border-bottom-color: black;
+}
+
+.colorCard.brighttext:hover #copy::after {
+    border-bottom-color: white;
+}
+
+#copy {
+    position: absolute;
+    top: -20px;
+    right: 15px;
+    color: transparent;
+    transition: color 1s ease;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.colorCard:hover #copy {
+    color: black;
+}
+
+.colorCard.brighttext:hover #copy {
+    color: white;
+}
+
+.colorName {
+    font-family: "Palatino Linotype", "Book Antiqua", STFangsong, FangSong;
+}

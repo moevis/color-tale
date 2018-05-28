@@ -1,0 +1,11 @@
+<div class="colorCard" [class.brighttext]="colorInfo.color.brightness < 0.5" [ngStyle]="{ 'box-shadow': colorInfo.color.hex + '9d 0px 16px 60px -15px' }">
+  <div class="colorHeader" [ngStyle]="{'background-color': colorInfo.color.hex }">
+    <div class="colorName">[ {{colorInfo.name}} ]</div>
+    <div class="colorSubName">{{colorInfo.subname}}</div>
+  </div>
+  <div class="colorBody" [ngStyle]="{ 'color': (colorInfo.color.brightness < 0.7? colorInfo.color.hex: colorInfo.color.darken(0.7).hex) }">
+    <div title="HEX" ngxClipboard [cbContent]="colorInfo.color.hex" class="triangleBottomright"></div><span title="HEX" ngxClipboard [cbContent]="colorInfo.color.hex" id="copy">COPY</span>
+    <div class="rgbColor">RGB({{colorInfo.color.r}},{{colorInfo.color.g}},{{colorInfo.color.b}})</div>
+    <div class="hexColor">{{colorInfo.color.hex}}</div>
+  </div>
+</div>
