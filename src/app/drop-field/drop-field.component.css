@@ -18,6 +18,7 @@
     border: 5px dashed #c7c7c7;
     min-height: 100px;
     border-radius: 15px;
+    box-sizing: border-box;
 
     background: url(/assets/img/upload.svg);
     background-size: 60px;
